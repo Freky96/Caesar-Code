@@ -36,4 +36,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 - Font: VT323 (Google Fonts)
-- Sound effects: soundjay.com
