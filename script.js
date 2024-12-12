@@ -41,9 +41,9 @@ function typeWriter(text, element, index = 0) {
 
 // Function to play keyboard sound
 function playKeySound() {
-    const sound = document.getElementById('keySound');
-    sound.currentTime = 0;
-    sound.play().catch(e => console.log('Audio playback failed:', e));
+    const sound = document.getElementById('keySound'); // Get the audio element
+    sound.currentTime = 0; // Restart the sound
+    sound.play().catch(e => console.log('Audio playback failed:', e)); // Play the sound and handle any errors
 }
 
 // Function to update status bar
