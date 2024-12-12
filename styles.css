@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --terminal-green: #00ff00;
+    --terminal-dark-green: #003300;
+    --terminal-black: #000000;
+    --terminal-glow: 0 0 10px #00ff00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+body {
+    background-color: #111;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.terminal {
+    background-color: var(--terminal-black);
+    border: 3px solid var(--terminal-green);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: var(--terminal-dark-green);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.led-light {
+    width: 12px;
+    height: 12px;
+    background-color: var(--terminal-green);
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+.terminal-header h1 {
+    color: var(--terminal-green);
+    font-size: 24px;
+    text-shadow: var(--terminal-glow);
+}
+
+.screen {
+    padding: 20px;
+    background-color: rgba(0, 20, 0, 0.9);
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: var(--terminal-green);
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+input, textarea {
+    width: 100%;
+    background-color: var(--terminal-black);
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-green);
+    padding: 8px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+button {
+    background-color: var(--terminal-dark-green);
+    color: var(--terminal-green);
+    border: 2px solid var(--terminal-green);
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--terminal-green);
+    color: var(--terminal-black);
+    box-shadow: var(--terminal-glow);
+}
+
+.output-section {
+    border: 1px solid var(--terminal-green);
+    padding: 15px;
+    background-color: rgba(0, 20, 0, 0.5);
+}
+
+.output-label {
+    color: var(--terminal-green);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.output-text {
+    color: var(--terminal-green);
+    min-height: 50px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.status-bar {
+    background-color: var(--terminal-dark-green);
+    padding: 8px;
+    color: var(--terminal-green);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Effetto scan lines */
+.screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03) 0px,
+        rgba(0, 255, 0, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .terminal {
+        width: 95%;
+    }
+    
+    .terminal-header h1 {
+        font-size: 20px;
+    }
+}

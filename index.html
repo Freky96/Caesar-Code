@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="led-light"></div>
+            <h1>CAESAR CODE v1.0</h1>
+        </div>
+        <div class="screen">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="key">KEY:</label>
+                    <input type="text" id="key" maxlength="2" placeholder="00">
+                </div>
+                <div class="input-group">
+                    <label for="plaintext">TEXT:</label>
+                    <textarea id="plaintext" placeholder="Enter text to encrypt..."></textarea>
+                </div>
+                <button id="encrypt-btn" onclick="handleEncrypt()">ENCRYPT</button>
+            </div>
+            <div class="output-section">
+                <div class="output-display">
+                    <div class="output-label">OUTPUT:</div>
+                    <div id="output" class="output-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="status-bar">
+            <span id="status">SYSTEM READY</span>
+            <span class="cursor">█</span>
+        </div>
+    </div>
+    <audio id="keySound" src="https://www.soundjay.com/mechanical/sounds/typewriter-key-1.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
