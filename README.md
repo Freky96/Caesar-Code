@@ -5,6 +5,8 @@ A retro-futuristic web application for Caesar cipher encryption, created by Frek
 ## Demo
 [Caesar-Code](https://caesarcode.netlify.app) <---CLICK HERE
 
+## Preview
+![Caesar Code](Images/CAESAR_CODE_IMAGE.png)
 ## Description
 This web application implements the classic Caesar cipher encryption algorithm with a vintage terminal interface. The application features a retro-futuristic design inspired by old computer terminals, complete with green text, scanning effects, and keyboard sounds.
 
